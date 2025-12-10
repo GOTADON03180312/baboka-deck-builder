@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>デッキ作成ツール（完全版）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>デッキ作成</h1>
+  <div id="deck-count">
+    <button id="reset-deck-btn" style="margin-right:10px;">リセット</button>
+    デッキ: <span id="count">0</span>枚
+  </div>
+</header>
+
+<!-- デッキリセット確認モーダルを追加 -->
+<div id="reset-modal" class="hidden">
+  <div id="reset-modal-content">
+    <p>デッキの内容をリセットしますか？</p>
+    <button id="cancel-reset">戻る</button>
+    <button id="confirm-reset">削除</button>
+  </div>
+</div>
+
+<div id="container">
+
+<!-- 左側カード一覧 -->
+<aside id="card-panel">
+
+    <!-- 検索 -->
+    <div id="filters">
+      <input type="text" id="search" placeholder="カード名検索…">
+    </div>
+
+    <!-- フィルタ ドロップダウン -->
+    <div id="filter-row">
+
+      <!-- レアリティ -->
+      <div id="filter-rarity" class="filter-dropdown">
+        <div class="filter-btn">レアリティ</div>
+        <div class="filter-content">
+          <label><input type="checkbox" value="N">N</label>
+          <label><input type="checkbox" value="NP">NP</label>
+          <label><input type="checkbox" value="R">R</label>
+          <label><input type="checkbox" value="RP">RP</label>
+          <label><input type="checkbox" value="S">S</label>
+          <label><input type="checkbox" value="SP">SP</label>
+          <label><input type="checkbox" value="頂">頂</label>
+          <label><input type="checkbox" value="頂P">頂P</label>
+          <label><input type="checkbox" value="極">極</label>
+          <label><input type="checkbox" value="極P">極P</label>
+          <label><input type="checkbox" value="P">P</label>
+          <label><input type="checkbox" value="D">D</label>
+        </div>
+      </div>
+
+      <!-- ポジション -->
+      <div class="filter-dropdown">
+        <div class="filter-btn">ポジション</div>
+        <div class="filter-content">
+          <label><input type="checkbox" value="WS">WS</label>
+          <label><input type="checkbox" value="S">S</label>
+          <label><input type="checkbox" value="MB">MB</label>
+          <label><input type="checkbox" value="Li">Li</label>
+          <label><input type="checkbox" value="イベント">イベント</label>
+          <label><input type="checkbox" value="その他">その他</label>
+        </div>
+      </div>
+
+      <!-- 所属 -->
+      <div class="filter-dropdown">
+        <div class="filter-btn">所属</div>
+        <div class="filter-content">
+          <label><input type="checkbox" value="烏野">烏野</label>
+          <label><input type="checkbox" value="音駒">音駒</label>
+          <label><input type="checkbox" value="青葉城西">青葉城西</label>
+          <label><input type="checkbox" value="梟谷">梟谷</label>
+          <label><input type="checkbox" value="白鳥沢">白鳥沢</label>
+          <label><input type="checkbox" value="伊達工業">伊達工業</label>
+          <label><input type="checkbox" value="稲荷崎">稲荷崎</label>
+          <label><input type="checkbox" value="鴎台">鴎台</label>
+          <label><input type="checkbox" value="その他">その他</label>
+        </div>
+      </div>
+
+      <!-- カード枚数表示 -->
+      <div id="card-count">表示：0枚</div>
+
+    </div>
+
+    <!-- ソート機能 -->
+    <div id="sort-area">
+      <select id="sort-key">
+        <option value="">ソートしない</option>
+        <option value="serve">サーブ</option>
+        <option value="block">ブロック</option>
+        <option value="receive">レシーブ</option>
+        <option value="toss">トス</option>
+        <option value="attack">アタック</option>
+      </select>
+
+      <select id="sort-order">
+        <option value="asc">昇順</option>
+        <option value="desc">降順</option>
+      </select>
+    </div>
+
+    <!-- グリッド -->
+    <div id="card-grid"></div>
+
+  </aside>
+
+ <!-- 右側デッキ -->
+<main id="deck-panel">
+  <h2>デッキ</h2>
+  <div id="deck"></div>
+  <button id="export">デッキをダウンロード</button>
+
+  <!-- JSONインポート用ドロップゾーン -->
+  <div id="import-drop-zone" style="padding:15px; border:2px dashed #888; text-align:center; margin-top:10px; cursor:pointer; user-select:none;">
+    ここにファイルをドロップ<br>またはクリックして選択
+  </div>
+  <input type="file" id="import-file-input" accept=".json" style="display:none;">
+</main>
+
+</div>
+
+<!-- カードプレビュー（枚数指定対応） -->
+<div id="modal" class="hidden">
+  <div id="modal-content">
+    <span id="close">&times;</span>
+    <img id="modal-image">
+    <h3 id="modal-name"></h3>
+
+    <!-- 情報表示は非表示にしてスペース確保 -->
+    <div id="modal-info" style="display:none;"></div>
+
+    <div id="modal-qty">
+      <button id="decrease" style="font-size: 2em;">-</button>
+      <input type="number" id="card-quantity" min="0" max="40" value="1" style="width: 60px; font-size: 1.5em; text-align: center;">
+      <button id="increase" style="font-size: 2em;">+</button>
+      <button id="add-to-deck" style="font-size: 1.2em;">確定</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
