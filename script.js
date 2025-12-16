@@ -6,30 +6,26 @@ let currentCard = null;
 // cardsフォルダ内の全JSONを自動読み込み
 // =====================================
 async function loadAllCards() {
-  const res = await fetch("cards/");
-  const text = await res.text();
+  try {
+    // index.json を読む
+    const indexRes = await fetch("data/index.json");
+    const files = await indexRes.json();
 
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(text, "text/html");
-  const links = Array.from(doc.querySelectorAll("a"));
-  const files = links
-    .map(a => a.getAttribute("href"))
-    .filter(f => f.endsWith(".json"));
+    for (const file of files) {
+      const res = await fetch(`data/${file}`);
+      const part = await res.json();
 
-  for (const f of files) {
-    const r = await fetch(`cards/${f}`);
-    const data = await r.json();
-
-    if (!data.image.startsWith("images/")) {
-      data.image = `images/${data.image}`;
+      cards.push(...part);
     }
 
-    cards.push(data);
-  }
+    loadDeck();
+    renderCards();
+    renderDeck();
 
-  loadDeck();
-  renderCards();
-  renderDeck();
+  } catch (e) {
+    alert("カードデータの読み込みに失敗しました");
+    console.error(e);
+  }
 }
 
 // =====================================
@@ -369,3 +365,4 @@ confirmReset.onclick = () => {
   renderDeck();
   resetModal.classList.add("hidden");
 };
+
