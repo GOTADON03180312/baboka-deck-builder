@@ -1,0 +1,17 @@
+[
+ {
+  "id": "HV-D01-001-D",
+  "category": "player",
+  "name": "日向 翔陽",
+  "rarity": "D",
+  "type": "MB",
+  "attr": "烏野",
+  "serve": 2,
+  "block": 2,
+  "receive": 2,
+  "toss": 0,
+  "attack": 2,
+  "effect": "登場：アタックエリア＿2ガッツ払えば使える。このキャラのアタックポイントに+2する。",
+  "image": "images/HV-D01-001-D.jpg"
+}
+]
