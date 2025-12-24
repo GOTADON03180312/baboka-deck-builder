@@ -1,425 +1,179 @@
-:root {
-  --bg-main: #f2f3f5;
-  --bg-white: #ffffff;
-  --border: #dcdcdc;
-  --shadow: rgba(0,0,0,0.12);
-  --shadow-heavy: rgba(0,0,0,0.25);
-  --accent: #3684d7;
-  --accent-dark: #2365ab;
-  --text-main: #333;
-  --text-light: #666;
-}
+let cards = []; 
+let deck = [];
+let currentCard = null;
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-  background: var(--bg-main);
-  color: var(--text-main);
-}
+// =====================================
+// cardsフォルダ内の全JSONを自動読み込み
+// =====================================
+async function loadAllCards() {
+  try {
+    const indexRes = await fetch("data/index.json");
+    const files = await indexRes.json();
 
-/* ---------------------------------
-   ヘッダー（deck-maker 風）
----------------------------------- */
-header {
-  background: var(--bg-white);
-  height: 60px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--border);
-  box-shadow: 0 1px 4px var(--shadow);
-}
+    for (const file of files) {
+      const res = await fetch(`data/${file}`);
+      const part = await res.json();
+      cards.push(...part);
+    }
 
-header h1 {
-  font-size: 20px;
-  font-weight: 600;
-}
+    loadDeck();
+    renderCards();
+    renderDeck();
 
-#deck-count {
-  color: var(--text-light);
-}
-
-/* ---------------------------------
-   レイアウト
----------------------------------- */
-#container {
-  display: flex;
-  height: calc(100vh - 60px);
-}
-
-/* ---------------------------------
-   左のカードパネル
----------------------------------- */
-#card-panel {
-  flex: 1;
-  padding: 12px;
-  overflow-y: auto;
-  border-right: 1px solid var(--border);
-  background: var(--bg-main);
-}
-
-/* フィルタエリア */
-#filters,
-#sort-area {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-  align-items: center;
-}
-
-#filters input,
-#filters select,
-#sort-area select {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  padding: 7px;
-  font-size: 14px;
-  border-radius: 6px;
-}
-
-/* ---------------------------------
-   フィルタ横並び
----------------------------------- */
-#filter-row {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap; /* 幅が足りない場合は折り返し */
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/* 各フィルタドロップダウン */
-.filter-dropdown {
-  position: relative;
-  flex-shrink: 0;
-}
-
-/* ボタン本体 */
-.filter-btn {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  padding: 5px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  color: var(--text-main);
-  min-width: 60px;
-  text-align: center;
-  white-space: nowrap;
-  display: inline-block;
-}
-
-/* ドロップダウン内容 */
-.filter-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 6px;
-  box-shadow: 0 2px 6px var(--shadow);
-  display: none;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 10;
-}
-
-.filter-content.show {
-  display: block;
-}
-
-.filter-content label {
-  display: block;
-  font-size: 13px;
-  color: var(--text-main);
-  margin-bottom: 2px;
-}
-
-/* カード枚数表示も横並びに */
-#card-count {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 5px 8px;
-  font-size: 13px;
-  white-space: nowrap;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-/* ---------------------------------
-   カードグリッド（deck-maker風）
----------------------------------- */
-#card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
-  gap: 12px;
-}
-
-.card {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: 0 1px 3px var(--shadow);
-  padding: 6px;
-  cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 3px 6px var(--shadow-heavy);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom: 4px;
-}
-
-.card div {
-  text-align: center;
-  font-size: 13px;
-  color: var(--text-main);
-}
-
-/* ---------------------------------
-   右側デッキパネル（固定）
----------------------------------- */
-#deck-panel {
-  width: 50%;
-  background: var(--bg-white);
-  padding: 15px;
-  border-left: 1px solid var(--border);
-  position: sticky;
-  top: 60px;
-  height: calc(100vh - 60px);
-  overflow-y: auto;
-  box-shadow: 0 0 5px var(--shadow);
-}
-
-#deck-panel h2 {
-  margin-top: 4px;
-  font-size: 18px;
-  color: var(--text-main);
-}
-
-/* デッキカードをグリッド表示 */
-#deck {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 6px;
-}
-
-.deck-item {
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
-  text-align: center;
-}
-
-.deck-item img {
-  width: 100%;
-  border-radius: 6px;
-  display: block;
-}
-
-.deck-item span {
-  display: none;
-}
-
-/* エクスポートボタン */
-#export {
-  width: 100%;
-  padding: 10px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.15s;
-  margin-top: 10px;
-}
-
-#export:hover {
-  background: var(--accent-dark);
-}
-
-/* ---------------------------------
-   モーダル（deck-maker風）
----------------------------------- */
-#modal.hidden {
-  display: none;
-}
-
-#modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#modal-content {
-  background: var(--bg-white);
-  width: 340px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--shadow-heavy);
-  position: relative;
-  text-align: center;
-}
-
-#modal-content img {
-  width: 100%;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
-
-#close {
-  position: absolute;
-  right: 12px;
-  top: 8px;
-  font-size: 26px;
-  cursor: pointer;
-  color: var(--text-light);
-  transition: 0.1s;
-}
-
-#close:hover {
-  color: var(--text-main);
-}
-
-#modal-name {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-#modal-info p {
-  margin: 3px 0;
-  font-size: 14px;
-  color: var(--text-light);
-}
-/* デッキリセットモーダル用 */
-#reset-modal.hidden {
-  display: none;
-}
-
-#reset-modal {
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-#reset-modal-content {
-  background: var(--bg-white);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 4px 12px var(--shadow-heavy);
-}
-
-#reset-modal-content p {
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-#reset-modal-content button {
-  padding: 6px 12px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-#cancel-reset {
-  background: #ccc;
-  color: #333;
-}
-
-#confirm-reset {
-  background: #d9534f;
-  color: #fff;
-}
-
-/* =================================
-   スマホ対応（PCレイアウト維持）
-================================= */
-@media (max-width: 768px) {
-
-  /* 全体を縦並びに */
-  #container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  /* カードパネルを上に */
-  #card-panel {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    height: auto;
-  }
-
-  /* デッキパネルを下に */
-  #deck-panel {
-    width: 100%;
-    position: static;
-    height: auto;
-    box-shadow: none;
-    border-left: none;
-  }
-
-  /* フィルタ・ソートを縦並び */
-  #filters,
-  #sort-area {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  #filters input,
-  #filters select,
-  #sort-area select {
-    width: 100%;
-    font-size: 16px; /* タップしやすく */
-  }
-
-  /* フィルタボタンを押しやすく */
-  .filter-btn {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  /* カードグリッドを少し大きめに */
-  #card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-
-  /* デッキは横スクロールに */
-  #deck {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  /* モーダルを画面いっぱいに近づける */
-  #modal-content {
-    width: 90%;
-    max-width: 360px;
+  } catch (e) {
+    alert("カードデータの読み込みに失敗しました");
+    console.error(e);
   }
 }
 
+// =====================================
+// カード描画（フィルタ + ソート）
+// =====================================
+function renderCards() {
+  const grid = document.getElementById("card-grid");
+  grid.innerHTML = "";
+
+  let list = [...cards];
+
+  const word = document.getElementById("search").value.toLowerCase();
+  if (word) list = list.filter(c => c.name.toLowerCase().includes(word));
+
+  const raritySelected = Array.from(
+    document.querySelectorAll("#filter-row .filter-dropdown:nth-child(1) input:checked")
+  ).map(i => i.value);
+
+  if (raritySelected.length) {
+    list = list.filter(c => raritySelected.includes(c.rarity));
+  }
+
+  const typeSelected = Array.from(
+    document.querySelectorAll("#filter-row .filter-dropdown:nth-child(2) input:checked")
+  ).map(i => i.value);
+
+  if (typeSelected.length) {
+    list = list.filter(c => {
+      const types = c.type ? c.type.split("/") : [];
+      return types.some(t => typeSelected.includes(t));
+    });
+  }
+
+  const attrSelected = Array.from(
+    document.querySelectorAll("#filter-row .filter-dropdown:nth-child(3) input:checked")
+  ).map(i => i.value);
+
+  if (attrSelected.length) {
+    list = list.filter(c => {
+      const attrs = c.attr ? c.attr.split("/") : [];
+      return attrs.some(a => attrSelected.includes(a));
+    });
+  }
+
+  const key = document.getElementById("sort-key").value;
+  const order = document.getElementById("sort-order").value;
+
+  if (key) {
+    list.sort((a, b) => {
+      const x = a[key] ?? 0;
+      const y = b[key] ?? 0;
+      return order === "asc" ? x - y : y - x;
+    });
+  }
+
+  document.getElementById("card-count").textContent = `表示：${list.length}枚`;
+
+  list.forEach(card => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <img src="${card.image}">
+      <div>${card.name}</div>
+    `;
+    div.onclick = () => showPreview(card);
+    grid.appendChild(div);
+  });
+}
+
+// =====================================
+// デッキ操作
+// =====================================
+function addCardMultiple(card, qty) {
+  for (let i = 0; i < qty; i++) deck.push(card);
+  saveDeck();
+  renderDeck();
+}
+
+function removeCard(i) {
+  deck.splice(i, 1);
+  saveDeck();
+  renderDeck();
+}
+
+function renderDeck() {
+  const div = document.getElementById("deck");
+  div.innerHTML = "";
+
+  deck.forEach((card, i) => {
+    const item = document.createElement("div");
+    item.className = "deck-item";
+    item.innerHTML = `
+      <img src="${card.image}">
+      <span class="remove-btn" onclick="removeCard(${i})">✕</span>
+    `;
+    item.onclick = () => showPreview(card, true);
+    div.appendChild(item);
+  });
+
+  document.getElementById("count").textContent = deck.length;
+}
+
+function saveDeck() {
+  localStorage.setItem("mydeck", JSON.stringify(deck));
+}
+
+function loadDeck() {
+  const d = localStorage.getItem("mydeck");
+  if (d) deck = JSON.parse(d);
+}
+
+// =====================================
+// プレビュー（枚数調整）
+// =====================================
+function showPreview(card, fromDeck = false) {
+  currentCard = card;
+  document.getElementById("modal").classList.remove("hidden");
+  document.getElementById("modal-image").src = card.image;
+  document.getElementById("modal-name").textContent = card.name;
+
+  const qtyInput = document.getElementById("card-quantity");
+  qtyInput.value = fromDeck
+    ? deck.filter(c => c.id === card.id).length
+    : 1;
+}
+
+document.getElementById("close").onclick = () =>
+  document.getElementById("modal").classList.add("hidden");
+
+// ★ 変更点：pointerdown で即反応
+const qtyInput = document.getElementById("card-quantity");
+
+document.getElementById("increase").addEventListener("pointerdown", e => {
+  e.preventDefault();
+  qtyInput.value = Math.min(40, parseInt(qtyInput.value) + 1);
+});
+
+document.getElementById("decrease").addEventListener("pointerdown", e => {
+  e.preventDefault();
+  qtyInput.value = Math.max(0, parseInt(qtyInput.value) - 1);
+});
+
+document.getElementById("add-to-deck").onclick = () => {
+  const qty = Math.max(0, Math.min(40, parseInt(qtyInput.value)));
+  deck = deck.filter(c => c.id !== currentCard.id);
+  addCardMultiple(currentCard, qty);
+  document.getElementById("modal").classList.add("hidden");
+};
+
+// =====================================
+// 初期化
+// =====================================
+loadAllCards();
