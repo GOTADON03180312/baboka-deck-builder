@@ -358,35 +358,3 @@ header h1 {
   background: #d9534f;
   color: #fff;
 }
-/* =================================
-   スマホ対応（最小限・レイアウト不変）
-================================= */
-@media (max-width: 768px) {
-
-  /* 入力・セレクトをタップしやすく */
-  #filters input,
-  #filters select,
-  #sort-area select {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  /* フィルタボタンを少し大きく */
-  .filter-btn {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  /* モーダルを画面に収める */
-  #modal-content {
-    width: 90%;
-    max-width: 340px;
-  }
-
-  /* ×ボタンを押しやすく */
-  #close {
-    font-size: 32px;
-    padding: 6px;
-  }
-}
-
