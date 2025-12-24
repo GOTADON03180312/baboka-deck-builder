@@ -359,3 +359,67 @@ header h1 {
   color: #fff;
 }
 
+/* =================================
+   スマホ対応（PCレイアウト維持）
+================================= */
+@media (max-width: 768px) {
+
+  /* 全体を縦並びに */
+  #container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* カードパネルを上に */
+  #card-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    height: auto;
+  }
+
+  /* デッキパネルを下に */
+  #deck-panel {
+    width: 100%;
+    position: static;
+    height: auto;
+    box-shadow: none;
+    border-left: none;
+  }
+
+  /* フィルタ・ソートを縦並び */
+  #filters,
+  #sort-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #filters input,
+  #filters select,
+  #sort-area select {
+    width: 100%;
+    font-size: 16px; /* タップしやすく */
+  }
+
+  /* フィルタボタンを押しやすく */
+  .filter-btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  /* カードグリッドを少し大きめに */
+  #card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  /* デッキは横スクロールに */
+  #deck {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* モーダルを画面いっぱいに近づける */
+  #modal-content {
+    width: 90%;
+    max-width: 360px;
+  }
+}
+
