@@ -285,7 +285,7 @@ header h1 {
 #close {
   position: absolute;
   right: 64px;
-  top: 64px;
+  top: 32px;
   font-size: 64px;
   cursor: pointer;
   color: var(--text-light);
@@ -390,6 +390,7 @@ header h1 {
     padding: 64px;
   }
 }
+
 
 
 
