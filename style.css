@@ -84,7 +84,7 @@ header h1 {
 #filter-row {
   display: flex;
   gap: 6px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* 幅が足りない場合は折り返し */
   align-items: center;
   margin-bottom: 10px;
 }
@@ -136,7 +136,7 @@ header h1 {
   margin-bottom: 2px;
 }
 
-/* カード枚数表示 */
+/* カード枚数表示も横並びに */
 #card-count {
   background: var(--bg-white);
   border: 1px solid var(--border);
@@ -149,7 +149,7 @@ header h1 {
 }
 
 /* ---------------------------------
-   カードグリッド
+   カードグリッド（deck-maker風）
 ---------------------------------- */
 #card-grid {
   display: grid;
@@ -185,7 +185,7 @@ header h1 {
 }
 
 /* ---------------------------------
-   右側デッキパネル
+   右側デッキパネル（固定）
 ---------------------------------- */
 #deck-panel {
   width: 50%;
@@ -202,22 +202,53 @@ header h1 {
 #deck-panel h2 {
   margin-top: 4px;
   font-size: 18px;
+  color: var(--text-main);
 }
 
-/* デッキ */
+/* デッキカードをグリッド表示 */
 #deck {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 6px;
 }
 
+.deck-item {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+}
+
 .deck-item img {
   width: 100%;
   border-radius: 6px;
+  display: block;
+}
+
+.deck-item span {
+  display: none;
+}
+
+/* エクスポートボタン */
+#export {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.15s;
+  margin-top: 10px;
+}
+
+#export:hover {
+  background: var(--accent-dark);
 }
 
 /* ---------------------------------
-   モーダル
+   モーダル（deck-maker風）
 ---------------------------------- */
 #modal.hidden {
   display: none;
@@ -225,7 +256,10 @@ header h1 {
 
 #modal {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.55);
   display: flex;
   align-items: center;
@@ -242,43 +276,108 @@ header h1 {
   text-align: center;
 }
 
-/* ★ ×ボタン拡大（変更点） */
+#modal-content img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
 #close {
   position: absolute;
-  right: 8px;
+  right: 12px;
   top: 8px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
   color: var(--text-light);
-  border-radius: 50%;
+  transition: 0.1s;
 }
 
 #close:hover {
-  background: rgba(0,0,0,0.05);
   color: var(--text-main);
 }
 
-/* 枚数操作ボタン改善（変更点） */
-#modal-qty button {
-  min-width: 48px;
-  min-height: 48px;
-  touch-action: manipulation;
+#modal-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
 }
 
-/* ---------------------------------
-   スマホ対応（既存方針維持）
----------------------------------- */
+#modal-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: var(--text-light);
+}
+/* デッキリセットモーダル用 */
+#reset-modal.hidden {
+  display: none;
+}
+
+#reset-modal {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#reset-modal-content {
+  background: var(--bg-white);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 12px var(--shadow-heavy);
+}
+
+#reset-modal-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#reset-modal-content button {
+  padding: 6px 12px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cancel-reset {
+  background: #ccc;
+  color: #333;
+}
+
+#confirm-reset {
+  background: #d9534f;
+  color: #fff;
+}
+
+/* =================================
+   スマホ対応（PCレイアウト維持）
+================================= */
 @media (max-width: 768px) {
+
+  /* 全体を縦並びに */
   #container {
     flex-direction: column;
     height: auto;
   }
 
+  /* カードパネルを上に */
+  #card-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    height: auto;
+  }
+
+  /* デッキパネルを下に */
   #deck-panel {
     width: 100%;
     position: static;
@@ -287,7 +386,71 @@ header h1 {
     border-left: none;
   }
 
+  /* フィルタ・ソートを縦並び */
+  #filters,
+  #sort-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #filters input,
+  #filters select,
+  #sort-area select {
+    width: 100%;
+    font-size: 16px; /* タップしやすく */
+  }
+
+  /* フィルタボタンを押しやすく */
+  .filter-btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  /* カードグリッドを少し大きめに */
+  #card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  /* デッキは横スクロールに */
+  #deck {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* モーダルを画面いっぱいに近づける */
   #modal-content {
     width: 90%;
+    max-width: 360px;
+  }
+}
+
+/* =================================
+   スマホ対応（最小限・レイアウト不変）
+================================= */
+@media (max-width: 768px) {
+
+  /* 入力・セレクトをタップしやすく */
+  #filters input,
+  #filters select,
+  #sort-area select {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* フィルタボタンを少し大きく */
+  .filter-btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  /* モーダルを画面に収める */
+  #modal-content {
+    width: 90%;
+    max-width: 340px;
+  }
+
+  /* ×ボタンを押しやすく */
+  #close {
+    font-size: 32px;
+    padding: 6px;
   }
 }
