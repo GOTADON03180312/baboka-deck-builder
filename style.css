@@ -387,11 +387,11 @@ header h1 {
   /* ×ボタンを押しやすく */
   #close {
     font-size: 64px;
-    top: 8px;
-    right: 12px;
-    transform: translate(0, 0);
+    padding: 64px;
   }
+
 }
+
 
 
 
