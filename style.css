@@ -284,8 +284,8 @@ header h1 {
 
 #close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 
   width: 48px;
   height: 48px;
@@ -395,12 +395,14 @@ header h1 {
   }
 
   /* ×ボタンを押しやすく */
- #close {
+  #close {
     width: 56px;
     height: 56px;
     font-size: 36px;
   }
+
 }
+
 
 
 
