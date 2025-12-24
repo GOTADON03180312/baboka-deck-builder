@@ -285,7 +285,7 @@ header h1 {
 #close {
   position: absolute;
   right: 12px;
-  top: 8px;
+  top: 2px;
   font-size: 64px;
   cursor: pointer;
   color: var(--text-light);
@@ -387,9 +387,10 @@ header h1 {
   /* ×ボタンを押しやすく */
   #close {
     font-size: 64px;
-    padding: 6px;
+    padding: 2px;
   }
 }
+
 
 
 
