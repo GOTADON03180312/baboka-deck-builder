@@ -284,14 +284,12 @@ header h1 {
 
 #close {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  right: 64px;
+  top: 32px;
   font-size: 64px;
-  line-height: 1;
   cursor: pointer;
   color: var(--text-light);
   transition: 0.1s;
-  transform: translate(0, 0); /* 中心をずらさず固定 */
 }
 
 #close:hover {
@@ -394,6 +392,7 @@ header h1 {
     transform: translate(0, 0);
   }
 }
+
 
 
 
