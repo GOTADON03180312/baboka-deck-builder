@@ -1,4 +1,4 @@
-:root { 
+:root {
   --bg-main: #f2f3f5;
   --bg-white: #ffffff;
   --border: #dcdcdc;
@@ -284,9 +284,9 @@ header h1 {
 
 #close {
   position: absolute;
-  right: 64px;
-  top: 32px;
-  font-size: 64px;
+  right: 12px;
+  top: 8px;
+  font-size: 26px;
   cursor: pointer;
   color: var(--text-light);
   transition: 0.1s;
@@ -360,51 +360,65 @@ header h1 {
 }
 
 /* =================================
-   スマホ対応（最小限・レイアウト不変）
+   スマホ対応（PCレイアウト維持）
 ================================= */
 @media (max-width: 768px) {
 
-  /* 入力・セレクトをタップしやすく */
+  /* 全体を縦並びに */
+  #container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* カードパネルを上に */
+  #card-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    height: auto;
+  }
+
+  /* デッキパネルを下に */
+  #deck-panel {
+    width: 100%;
+    position: static;
+    height: auto;
+    box-shadow: none;
+    border-left: none;
+  }
+
+  /* フィルタ・ソートを縦並び */
+  #filters,
+  #sort-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   #filters input,
   #filters select,
   #sort-area select {
-    font-size: 16px;
-    padding: 10px;
+    width: 100%;
+    font-size: 16px; /* タップしやすく */
   }
 
-  /* フィルタボタンを少し大きく */
+  /* フィルタボタンを押しやすく */
   .filter-btn {
     padding: 8px 10px;
     font-size: 14px;
   }
 
-  /* モーダルを画面に収める */
+  /* カードグリッドを少し大きめに */
+  #card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  /* デッキは横スクロールに */
+  #deck {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* モーダルを画面いっぱいに近づける */
   #modal-content {
     width: 90%;
-    max-width: 340px;
+    max-width: 360px
   }
-
-  /* ×ボタンを押しやすく */
-  #close {
-    font-size: 64px;
-    padding: 64px;
-  }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
