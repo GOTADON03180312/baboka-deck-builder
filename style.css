@@ -1,4 +1,7 @@
-:root {
+CSSは下記です。
+変更点以外や現在のPC版のレイアウト自体は変えたくないです。
+
+:root { 
   --bg-main: #f2f3f5;
   --bg-white: #ffffff;
   --border: #dcdcdc;
@@ -358,3 +361,5 @@ header h1 {
   background: #d9534f;
   color: #fff;
 }
+
+
