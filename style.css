@@ -284,8 +284,8 @@ header h1 {
 
 #close {
   position: absolute;
-  right: 25px;
-  top: 40px;
+  right: 48px;
+  top: 64px;
   font-size: 64px;
   cursor: pointer;
   color: var(--text-light);
@@ -390,6 +390,7 @@ header h1 {
     padding: 20px;
   }
 }
+
 
 
 
