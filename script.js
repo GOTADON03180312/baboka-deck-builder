@@ -165,6 +165,29 @@ document.addEventListener("click", e => {
 });
 
 // =====================================
+// フィルタ・ソート状態の見た目更新
+// =====================================
+function updateFilterAndSortState() {
+
+  // --- フィルタ ---
+  document.querySelectorAll(".filter-dropdown").forEach(dropdown => {
+    const btn = dropdown.querySelector(".filter-btn");
+    const checkedCount = dropdown.querySelectorAll("input:checked").length;
+
+    btn.classList.toggle("active-filter", checkedCount > 0);
+  });
+
+  // --- ソート ---
+  const sortKey = document.getElementById("sort-key");
+  const sortOrder = document.getElementById("sort-order");
+
+  const sortActive = sortKey.value !== "";
+
+  sortKey.classList.toggle("active-sort", sortActive);
+  sortOrder.classList.toggle("active-sort", sortActive);
+}
+
+// =====================================
 // デッキ側の操作
 // =====================================
 document.getElementById("deck-panel").ondragover = e => e.preventDefault();
@@ -379,5 +402,6 @@ confirmReset.onclick = () => {
   renderDeck();
   resetModal.classList.add("hidden");
 };
+
 
 
