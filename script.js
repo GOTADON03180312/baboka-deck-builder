@@ -126,7 +126,6 @@ function renderCards() {
     div.ondragstart = e => e.dataTransfer.setData("id", card.id);
     grid.appendChild(div);
   });
-  updateFilterAndSortState();
 }
 
 // =====================================
@@ -402,6 +401,7 @@ confirmReset.onclick = () => {
   renderDeck();
   resetModal.classList.add("hidden");
 };
+
 
 
 
