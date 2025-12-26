@@ -126,6 +126,12 @@ function renderCards() {
     div.ondragstart = e => e.dataTransfer.setData("id", card.id);
     grid.appendChild(div);
   });
+
+  // =====================================
+  // フィルタボタン・ソートセレクト色更新（追加）
+  // =====================================
+  updateFilterButtonColors();
+  updateSortColors();
 }
 
 // =====================================
@@ -268,7 +274,6 @@ modalContent.addEventListener("click", e => {
   e.stopPropagation();
 });
 
-
 // =====================================
 // エクスポート（修正版：名前入力対応）
 // =====================================
@@ -289,7 +294,6 @@ document.getElementById("export").onclick = () => {
   a.download = deckName + ".json";
   a.click();
 };
-
 
 // =====================================
 // 入力イベントで即時反映 + 検索クリアボタン
@@ -379,3 +383,27 @@ confirmReset.onclick = () => {
   resetModal.classList.add("hidden");
 };
 
+// =====================================
+// フィルタボタン・ソートセレクト色変更関数（追加部分）
+// =====================================
+function updateFilterButtonColors() {
+  document.querySelectorAll("#filter-row .filter-dropdown").forEach((dropdown) => {
+    const btn = dropdown.querySelector(".filter-btn");
+    const checked = dropdown.querySelectorAll("input:checked").length > 0;
+    if (checked) {
+      btn.style.backgroundColor = "rgba(54, 132, 215, 0.2)"; // 薄青
+      btn.style.borderColor = "#3684d7";
+    } else {
+      btn.style.backgroundColor = "";
+      btn.style.borderColor = "";
+    }
+  });
+}
+
+function updateSortColors() {
+  const keySelect = document.getElementById("sort-key");
+  const orderSelect = document.getElementById("sort-order");
+
+  keySelect.style.backgroundColor = keySelect.value ? "rgba(54, 132, 215, 0.2)" : "";
+  orderSelect.style.backgroundColor = orderSelect.value ? "rgba(54, 132, 215, 0.2)" : "";
+}
