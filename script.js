@@ -378,8 +378,3 @@ confirmReset.onclick = () => {
   renderDeck();
   resetModal.classList.add("hidden");
 };
-
-
-
-
-
