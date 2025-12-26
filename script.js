@@ -258,7 +258,7 @@ document.getElementById("add-to-deck").onclick = () => {
 
 // モーダル外クリックで閉じる
 const modal = document.getElementById("modal");
-const modalContent = modal.querySelector("#modal-content");
+const modalContent = document.getElementById("modal-content");
 
 modal.addEventListener("click", () => {
   modal.classList.add("hidden");
@@ -378,4 +378,5 @@ confirmReset.onclick = () => {
   renderDeck();
   resetModal.classList.add("hidden");
 };
+
 
