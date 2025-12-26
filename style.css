@@ -422,3 +422,22 @@ header h1 {
     max-width: 360px
   }
 }
+
+/* ================================
+   フィルタ・ソート有効状態表示
+================================ */
+
+/* フィルタが有効なとき */
+.filter-btn.active-filter {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ソートが有効なとき */
+#sort-key.active-sort,
+#sort-order.active-sort {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
