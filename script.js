@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 let cards = []; 
 let deck = [];
 let currentCard = null;
@@ -379,4 +381,4 @@ confirmReset.onclick = () => {
   resetModal.classList.add("hidden");
 };
 
-
+});
