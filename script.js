@@ -255,6 +255,20 @@ document.getElementById("add-to-deck").onclick = () => {
   renderDeck();
   document.getElementById("modal").classList.add("hidden");
 };
+
+// モーダル外クリックで閉じる
+const modal = document.getElementById("modal");
+const modalContent = modal.querySelector(".modal-content");
+
+modal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+modalContent.addEventListener("click", e => {
+  e.stopPropagation();
+});
+
+
 // =====================================
 // エクスポート（修正版：名前入力対応）
 // =====================================
@@ -364,4 +378,3 @@ confirmReset.onclick = () => {
   renderDeck();
   resetModal.classList.add("hidden");
 };
-
