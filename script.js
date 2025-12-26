@@ -135,23 +135,26 @@ document.querySelectorAll(".filter-dropdown").forEach(dropdown => {
   const btn = dropdown.querySelector(".filter-btn");
   const content = dropdown.querySelector(".filter-content");
 
+  // ドロップダウン開閉
   btn.addEventListener("click", e => {
     e.stopPropagation();
     content.classList.toggle("show");
   });
 
+  // 「解除」ボタンを作成
   const resetBtn = document.createElement("button");
   resetBtn.textContent = "解除";
   resetBtn.style.marginLeft = "5px";
   resetBtn.style.fontSize = "0.8em";
   resetBtn.onclick = e => {
-    e.stopPropagation();
+    e.stopPropagation(); // ドロップダウン開閉の影響を避ける
     dropdown.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
     renderCards();
   };
   btn.parentNode.insertBefore(resetBtn, btn.nextSibling);
 });
 
+// ドロップダウン外をクリックしたら閉じる
 document.addEventListener("click", e => {
   document.querySelectorAll(".filter-dropdown .filter-content.show").forEach(content => {
     if (!content.contains(e.target)) {
@@ -233,13 +236,6 @@ function showPreview(card, fromDeck = false) {
 document.getElementById("close").onclick = () =>
   document.getElementById("modal").classList.add("hidden");
 
-// ★ 追加：モーダル外クリックで閉じる
-document.getElementById("modal").addEventListener("click", e => {
-  if (e.target.id === "modal") {
-    document.getElementById("modal").classList.add("hidden");
-  }
-});
-
 document.getElementById("increase").onclick = () => {
   const i = document.getElementById("card-quantity");
   i.value = Math.min(40, parseInt(i.value) + 1);
@@ -260,8 +256,21 @@ document.getElementById("add-to-deck").onclick = () => {
   document.getElementById("modal").classList.add("hidden");
 };
 
+// モーダル外クリックで閉じる
+const modal = document.getElementById("modal");
+const modalContent = modal.querySelector(".modal-content");
+
+modal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+modalContent.addEventListener("click", e => {
+  e.stopPropagation();
+});
+
+
 // =====================================
-// エクスポート
+// エクスポート（修正版：名前入力対応）
 // =====================================
 document.getElementById("export").onclick = () => {
   if (deck.length === 0) {
@@ -269,9 +278,11 @@ document.getElementById("export").onclick = () => {
     return;
   }
 
+  // 名前入力
   let deckName = prompt("デッキ名を入力してください", "mydeck");
-  if (!deckName) return;
+  if (!deckName) return; // キャンセルした場合は何もしない
 
+  // ファイル名を deckName.json にする
   const data = JSON.stringify(deck, null, 2);
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
@@ -279,11 +290,13 @@ document.getElementById("export").onclick = () => {
   a.click();
 };
 
+
 // =====================================
 // 入力イベントで即時反映 + 検索クリアボタン
 // =====================================
 const searchInput = document.getElementById("search");
 
+// クリアボタン作成
 const clearBtn = document.createElement("button");
 clearBtn.textContent = "×";
 clearBtn.style.marginLeft = "5px";
@@ -296,6 +309,7 @@ clearBtn.onclick = () => {
 };
 searchInput.parentNode.insertBefore(clearBtn, searchInput.nextSibling);
 
+// 検索とフィルターの入力イベント
 document.querySelectorAll("#search, #filter-row input, #sort-key, #sort-order")
   .forEach(e => e.addEventListener("input", renderCards));
 
@@ -310,17 +324,20 @@ loadAllCards();
 const importDropZone = document.getElementById("import-drop-zone");
 const importFileInput = document.getElementById("import-file-input");
 
+// クリックでファイル選択
 importDropZone.addEventListener("click", () => importFileInput.click());
 
+// ファイル選択時
 importFileInput.addEventListener("change", (e) => {
   if (e.target.files.length) handleImportFile(e.target.files[0]);
 });
 
+// ドラッグ＆ドロップ対応
 importDropZone.addEventListener("dragover", (e) => {
   e.preventDefault();
   importDropZone.classList.add("dragover");
 });
-importDropZone.addEventListener("dragleave", () => {
+importDropZone.addEventListener("dragleave", (e) => {
   importDropZone.classList.remove("dragover");
 });
 importDropZone.addEventListener("drop", (e) => {
@@ -329,14 +346,15 @@ importDropZone.addEventListener("drop", (e) => {
   if (e.dataTransfer.files.length) handleImportFile(e.dataTransfer.files[0]);
 });
 
+// ファイル処理
 function handleImportFile(file) {
   const reader = new FileReader();
   reader.onload = () => {
     try {
       const json = JSON.parse(reader.result);
       if (!Array.isArray(json)) throw new Error("配列形式のJSONではありません");
-      deck = json;
-      saveDeck();
+      deck = json;  // デッキ配列に代入
+      saveDeck();   // ローカルストレージにも保存
       renderDeck();
       alert("デッキを読み込みました");
     } catch (err) {
