@@ -402,8 +402,6 @@ function updateFilterButtonColors() {
 
 function updateSortColors() {
   const keySelect = document.getElementById("sort-key");
-  const orderSelect = document.getElementById("sort-order");
-
   keySelect.style.backgroundColor = keySelect.value ? "rgba(54, 132, 215, 0.2)" : "";
-  orderSelect.style.backgroundColor = orderSelect.value ? "rgba(54, 132, 215, 0.2)" : "";
 }
+
