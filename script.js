@@ -7,7 +7,7 @@ let currentCard = null;
 // =====================================
 async function loadAllCards() {
   try {
-    // index.json を読む 
+    // index.json を読む
     const indexRes = await fetch("data/index.json");
     const files = await indexRes.json();
 
@@ -404,5 +404,6 @@ function updateSortColors() {
   const keySelect = document.getElementById("sort-key");
   keySelect.style.backgroundColor = keySelect.value ? "rgba(54, 132, 215, 0.2)" : "";
 }
+
 
 
