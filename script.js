@@ -3,7 +3,7 @@ let deck = [];
 let currentCard = null;
 
 // =====================================
-// cardsフォルダ内の全JSONを自動読み込み
+// cardsフォルダ内の全JSONを自動読み込み 
 // =====================================
 async function loadAllCards() {
   try {
@@ -404,6 +404,7 @@ function updateSortColors() {
   const keySelect = document.getElementById("sort-key");
   keySelect.style.backgroundColor = keySelect.value ? "rgba(54, 132, 215, 0.2)" : "";
 }
+
 
 
 
