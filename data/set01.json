@@ -2265,7 +2265,7 @@
     "image": "images/HV-P01-093-R.jpg"
   },
   {
-    "id": "HV-PR-001",
+    "id": "HV-PR-001-P",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2277,10 +2277,10 @@
     "toss": 0,
     "attack": 2,
     "effect": "このキャラが「日向 翔陽」の上に登場した時、このキャラのパラメータ1つに+1する。",
-    "image": "images/HV-PR-001.jpg"
+    "image": "images/HV-PR-001-P.jpg"
   },
   {
-    "id": "HV-PR-002",
+    "id": "HV-PR-002-P",
     "category": "player",
     "name": "影山 飛雄",
     "rarity": "P",
@@ -2292,10 +2292,10 @@
     "toss": 1,
     "attack": 1,
     "effect": "このキャラが「影山 飛雄」の上に登場した時、このキャラのパラメータ1つに+1する。",
-    "image": "images/HV-PR-002.jpg"
+    "image": "images/HV-PR-002-P.jpg"
   },
   {
-    "id": "HV-PR-003",
+    "id": "HV-PR-003-P",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2307,10 +2307,10 @@
     "toss": 0,
     "attack": 2,
     "effect": "登場：トスエリア＿手札からカードを1枚ドロップすれば使える。このキャラのアタックポイントに+2する。",
-    "image": "images/HV-PR-003.jpg"
+    "image": "images/HV-PR-003-P.jpg"
   },
   {
-    "id": "HV-PR-004",
+    "id": "HV-PR-004-P",
     "category": "player",
     "name": "影山 飛雄",
     "rarity": "P",
@@ -2322,10 +2322,10 @@
     "toss": 1,
     "attack": 2,
     "effect": "登場：トスエリア＿2ガッツ払えば使える。カードを1枚引く。",
-    "image": "images/HV-PR-004.jpg"
+    "image": "images/HV-PR-004-P.jpg"
   },
   {
-    "id": "HV-PR-005",
+    "id": "HV-PR-005-P",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2337,10 +2337,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-005.jpg"
+    "image": "images/HV-PR-005-P.jpg"
   },
   {
-    "id": "HV-PR-006",
+    "id": "HV-PR-006-P",
     "category": "player",
     "name": "木兎 光太郎",
     "rarity": "P",
@@ -2352,10 +2352,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-006.jpg"
+    "image": "images/HV-PR-006-P.jpg"
   },
   {
-    "id": "HV-PR-007",
+    "id": "HV-PR-007-P",
     "category": "player",
     "name": "及川 徹",
     "rarity": "P",
@@ -2367,10 +2367,10 @@
     "toss": 2,
     "attack": 1,
     "effect": "",
-    "image": "images/HV-PR-007.jpg"
+    "image": "images/HV-PR-007-P.jpg"
   },
   {
-    "id": "HV-PR-008",
+    "id": "HV-PR-008-P",
     "category": "player",
     "name": "岩泉 一",
     "rarity": "P",
@@ -2382,10 +2382,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-008.jpg"
+    "image": "images/HV-PR-008-P.jpg"
   },
   {
-    "id": "HV-PR-009",
+    "id": "HV-PR-009-P",
     "category": "player",
     "name": "及川・岩泉",
     "rarity": "P",
@@ -2397,10 +2397,10 @@
     "toss": 1,
     "attack": 0,
     "effect": "このカードを登場させる際、このカードのカード名を「及川・岩泉」の代わりに「及川 徹」か「岩泉 一」にする。",
-    "image": "images/HV-PR-009.jpg"
+    "image": "images/HV-PR-009-P.jpg"
   },
   {
-    "id": "HV-PR-010",
+    "id": "HV-PR-010-P",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2412,10 +2412,10 @@
     "toss": 0,
     "attack": 2,
     "effect": "",
-    "image": "images/HV-PR-010.jpg"
+    "image": "images/HV-PR-010-P.jpg"
   },
   {
-    "id": "HV-PR-011",
+    "id": "HV-PR-011-P",
     "category": "player",
     "name": "孤爪 研磨",
     "rarity": "P",
@@ -2427,10 +2427,10 @@
     "toss": 2,
     "attack": 1,
     "effect": "",
-    "image": "images/HV-PR-011.jpg"
+    "image": "images/HV-PR-011-P.jpg"
   },
   {
-    "id": "HV-PR-012",
+    "id": "HV-PR-012-P",
     "category": "player",
     "name": "日向・影山",
     "rarity": "P",
@@ -2442,10 +2442,10 @@
     "toss": 1,
     "attack": 1,
     "effect": "このカードを登場させる際、このカードのカード名を「日向・影山」の代わりに「日向 翔陽」か「影山 飛雄」にする。",
-    "image": "images/HV-PR-012.jpg"
+    "image": "images/HV-PR-012-P.jpg"
   },
   {
-    "id": "HV-PR-013",
+    "id": "HV-PR-013-P",
     "category": "player",
     "name": "木兎・赤葦",
     "rarity": "P",
@@ -2457,10 +2457,10 @@
     "toss": 1,
     "attack": 3,
     "effect": "このカードを登場させる際、このカードのカード名を「木兎・赤葦」の代わりに「木兎 光太郎」か「赤葦 京治」にする。",
-    "image": "images/HV-PR-013.jpg"
+    "image": "images/HV-PR-013-P.jpg"
   },
   {
-    "id": "HV-PR-014",
+    "id": "HV-PR-014-P",
     "category": "player",
     "name": "孤爪・黒尾",
     "rarity": "P",
@@ -2472,10 +2472,10 @@
     "toss": 1,
     "attack": 0,
     "effect": "このカードを登場させる際、このカードのカード名を「孤爪・黒尾」の代わりに「孤爪 研磨」か「黒尾 鉄朗」にする。",
-    "image": "images/HV-PR-014.jpg"
+    "image": "images/HV-PR-014-P.jpg"
   },
   {
-    "id": "HV-PR-015",
+    "id": "HV-PR-015-P",
     "category": "player",
     "name": "及川・岩泉",
     "rarity": "P",
@@ -2487,10 +2487,10 @@
     "toss": 1,
     "attack": 1,
     "effect": "このカードを登場させる際、このカードのカード名を「及川・岩泉」の代わりに「及川 徹」か「岩泉 一」にする。",
-    "image": "images/HV-PR-015.jpg"
+    "image": "images/HV-PR-015-P.jpg"
   },
   {
-    "id": "HV-PR-016",
+    "id": "HV-PR-016-P",
     "category": "player",
     "name": "月島・山口",
     "rarity": "P",
@@ -2502,10 +2502,10 @@
     "toss": 0,
     "attack": 0,
     "effect": "このカードを登場させる際、このカードのカード名を「月島・山口」の代わりに「月島 蛍」か「山口 忠」にする。",
-    "image": "images/HV-PR-016.jpg"
+    "image": "images/HV-PR-016-P.jpg"
   },
   {
-    "id": "HV-PR-017",
+    "id": "HV-PR-017-P",
     "category": "player",
     "name": "金田一・国見",
     "rarity": "P",
@@ -2517,10 +2517,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "このカードを登場させる際、このカードのカード名を「金田一・国見」の代わりに「金田一 勇太郎」か「国見 英」にする。",
-    "image": "images/HV-PR-017.jpg"
+    "image": "images/HV-PR-017-P.jpg"
   },
   {
-    "id": "HV-PR-018",
+    "id": "HV-PR-018-P",
     "category": "player",
     "name": "牛島・五色",
     "rarity": "P",
@@ -2532,10 +2532,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "このカードを登場させる際、このカードのカード名を「牛島・五色」の代わりに「牛島 若利」か「五色 工」にする。",
-    "image": "images/HV-PR-018.jpg"
+    "image": "images/HV-PR-018-P.jpg"
   },
   {
-    "id": "HV-PR-019",
+    "id": "HV-PR-019-P",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2547,10 +2547,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-019.jpg"
+    "image": "images/HV-PR-019-P.jpg"
   },
   {
-    "id": "HV-PR-020",
+    "id": "HV-PR-020-P",
     "category": "player",
     "name": "孤爪 研磨",
     "rarity": "P",
@@ -2562,10 +2562,10 @@
     "toss": 2,
     "attack": 0,
     "effect": "",
-    "image": "images/HV-PR-020.jpg"
+    "image": "images/HV-PR-020-P.jpg"
   },
   {
-    "id": "HV-PR-021",
+    "id": "HV-PR-021-P",
     "category": "player",
     "name": "木兎 光太郎",
     "rarity": "P",
@@ -2577,7 +2577,7 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-021.jpg"
+    "image": "images/HV-PR-021-P.jpg"
   }
 {
   "id": "HVBP-001-P",
