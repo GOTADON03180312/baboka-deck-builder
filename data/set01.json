@@ -722,7 +722,7 @@
   {
     "id": "HV-P01-014-R",
     "category": "player",
-    "name": "澤村 大地",
+    "name": "縁下 力",
     "rarity": "R",
     "type": "WS",
     "attr": "烏野",
@@ -737,7 +737,7 @@
   {
     "id": "HV-P01-014-RP",
     "category": "player",
-    "name": "澤村 大地",
+    "name": "縁下 力",
     "rarity": "RP",
     "type": "WS",
     "attr": "烏野",
@@ -2265,7 +2265,7 @@
     "image": "images/HV-P01-093-R.jpg"
   },
   {
-    "id": "HV-PR-001-s",
+    "id": "HV-PR-001",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2277,10 +2277,10 @@
     "toss": 0,
     "attack": 2,
     "effect": "このキャラが「日向 翔陽」の上に登場した時、このキャラのパラメータ1つに+1する。",
-    "image": "images/HV-PR-001-s.jpg"
+    "image": "images/HV-PR-001.jpg"
   },
   {
-    "id": "HV-PR-002-s",
+    "id": "HV-PR-002",
     "category": "player",
     "name": "影山 飛雄",
     "rarity": "P",
@@ -2292,10 +2292,10 @@
     "toss": 1,
     "attack": 1,
     "effect": "このキャラが「影山 飛雄」の上に登場した時、このキャラのパラメータ1つに+1する。",
-    "image": "images/HV-PR-002-s.jpg"
+    "image": "images/HV-PR-002.jpg"
   },
   {
-    "id": "HV-PR-003-s",
+    "id": "HV-PR-003",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2307,10 +2307,10 @@
     "toss": 0,
     "attack": 2,
     "effect": "登場：トスエリア＿手札からカードを1枚ドロップすれば使える。このキャラのアタックポイントに+2する。",
-    "image": "images/HV-PR-003-s.jpg"
+    "image": "images/HV-PR-003.jpg"
   },
   {
-    "id": "HV-PR-004-s",
+    "id": "HV-PR-004",
     "category": "player",
     "name": "影山 飛雄",
     "rarity": "P",
@@ -2322,10 +2322,10 @@
     "toss": 1,
     "attack": 2,
     "effect": "登場：トスエリア＿2ガッツ払えば使える。カードを1枚引く。",
-    "image": "images/HV-PR-004-s.jpg"
+    "image": "images/HV-PR-004.jpg"
   },
   {
-    "id": "HV-PR-005-s",
+    "id": "HV-PR-005",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2337,10 +2337,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-005-s.jpg"
+    "image": "images/HV-PR-005.jpg"
   },
   {
-    "id": "HV-PR-006-s",
+    "id": "HV-PR-006",
     "category": "player",
     "name": "木兎 光太郎",
     "rarity": "P",
@@ -2352,10 +2352,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-006-s.jpg"
+    "image": "images/HV-PR-006.jpg"
   },
   {
-    "id": "HV-PR-007-s",
+    "id": "HV-PR-007",
     "category": "player",
     "name": "及川 徹",
     "rarity": "P",
@@ -2367,10 +2367,10 @@
     "toss": 2,
     "attack": 1,
     "effect": "",
-    "image": "images/HV-PR-007-s.jpg"
+    "image": "images/HV-PR-007.jpg"
   },
   {
-    "id": "HV-PR-008-s",
+    "id": "HV-PR-008",
     "category": "player",
     "name": "岩泉 一",
     "rarity": "P",
@@ -2382,10 +2382,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-008-s.jpg"
+    "image": "images/HV-PR-008.jpg"
   },
   {
-    "id": "HV-PR-009-s",
+    "id": "HV-PR-009",
     "category": "player",
     "name": "及川・岩泉",
     "rarity": "P",
@@ -2397,10 +2397,10 @@
     "toss": 1,
     "attack": 0,
     "effect": "このカードを登場させる際、このカードのカード名を「及川・岩泉」の代わりに「及川 徹」か「岩泉 一」にする。",
-    "image": "images/HV-PR-009-s.jpg"
+    "image": "images/HV-PR-009.jpg"
   },
   {
-    "id": "HV-PR-010-s",
+    "id": "HV-PR-010",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2412,10 +2412,10 @@
     "toss": 0,
     "attack": 2,
     "effect": "",
-    "image": "images/HV-PR-010-s.jpg"
+    "image": "images/HV-PR-010.jpg"
   },
   {
-    "id": "HV-PR-011-s",
+    "id": "HV-PR-011",
     "category": "player",
     "name": "孤爪 研磨",
     "rarity": "P",
@@ -2427,10 +2427,10 @@
     "toss": 2,
     "attack": 1,
     "effect": "",
-    "image": "images/HV-PR-011-s.jpg"
+    "image": "images/HV-PR-011.jpg"
   },
   {
-    "id": "HV-PR-012-s",
+    "id": "HV-PR-012",
     "category": "player",
     "name": "日向・影山",
     "rarity": "P",
@@ -2442,10 +2442,10 @@
     "toss": 1,
     "attack": 1,
     "effect": "このカードを登場させる際、このカードのカード名を「日向・影山」の代わりに「日向 翔陽」か「影山 飛雄」にする。",
-    "image": "images/HV-PR-012-s.jpg"
+    "image": "images/HV-PR-012.jpg"
   },
   {
-    "id": "HV-PR-013-s",
+    "id": "HV-PR-013",
     "category": "player",
     "name": "木兎・赤葦",
     "rarity": "P",
@@ -2457,10 +2457,10 @@
     "toss": 1,
     "attack": 3,
     "effect": "このカードを登場させる際、このカードのカード名を「木兎・赤葦」の代わりに「木兎 光太郎」か「赤葦 京治」にする。",
-    "image": "images/HV-PR-013-s.jpg"
+    "image": "images/HV-PR-013.jpg"
   },
   {
-    "id": "HV-PR-014-s",
+    "id": "HV-PR-014",
     "category": "player",
     "name": "孤爪・黒尾",
     "rarity": "P",
@@ -2472,10 +2472,10 @@
     "toss": 1,
     "attack": 0,
     "effect": "このカードを登場させる際、このカードのカード名を「孤爪・黒尾」の代わりに「孤爪 研磨」か「黒尾 鉄朗」にする。",
-    "image": "images/HV-PR-014-s.jpg"
+    "image": "images/HV-PR-014.jpg"
   },
   {
-    "id": "HV-PR-015-s",
+    "id": "HV-PR-015",
     "category": "player",
     "name": "及川・岩泉",
     "rarity": "P",
@@ -2487,10 +2487,10 @@
     "toss": 1,
     "attack": 1,
     "effect": "このカードを登場させる際、このカードのカード名を「及川・岩泉」の代わりに「及川 徹」か「岩泉 一」にする。",
-    "image": "images/HV-PR-015-s.jpg"
+    "image": "images/HV-PR-015.jpg"
   },
   {
-    "id": "HV-PR-016-s",
+    "id": "HV-PR-016",
     "category": "player",
     "name": "月島・山口",
     "rarity": "P",
@@ -2502,10 +2502,10 @@
     "toss": 0,
     "attack": 0,
     "effect": "このカードを登場させる際、このカードのカード名を「月島・山口」の代わりに「月島 蛍」か「山口 忠」にする。",
-    "image": "images/HV-PR-016-s.jpg"
+    "image": "images/HV-PR-016.jpg"
   },
   {
-    "id": "HV-PR-017-s",
+    "id": "HV-PR-017",
     "category": "player",
     "name": "金田一・国見",
     "rarity": "P",
@@ -2517,10 +2517,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "このカードを登場させる際、このカードのカード名を「金田一・国見」の代わりに「金田一 勇太郎」か「国見 英」にする。",
-    "image": "images/HV-PR-017-s.jpg"
+    "image": "images/HV-PR-017.jpg"
   },
   {
-    "id": "HV-PR-018-s",
+    "id": "HV-PR-018",
     "category": "player",
     "name": "牛島・五色",
     "rarity": "P",
@@ -2532,10 +2532,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "このカードを登場させる際、このカードのカード名を「牛島・五色」の代わりに「牛島 若利」か「五色 工」にする。",
-    "image": "images/HV-PR-018-s.jpg"
+    "image": "images/HV-PR-018.jpg"
   },
   {
-    "id": "HV-PR-019_s",
+    "id": "HV-PR-019",
     "category": "player",
     "name": "日向 翔陽",
     "rarity": "P",
@@ -2547,10 +2547,10 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-019_s.jpg"
+    "image": "images/HV-PR-019.jpg"
   },
   {
-    "id": "HV-PR-020_s",
+    "id": "HV-PR-020",
     "category": "player",
     "name": "孤爪 研磨",
     "rarity": "P",
@@ -2562,10 +2562,10 @@
     "toss": 2,
     "attack": 0,
     "effect": "",
-    "image": "images/HV-PR-020_s.jpg"
+    "image": "images/HV-PR-020.jpg"
   },
   {
-    "id": "HV-PR-021_s",
+    "id": "HV-PR-021",
     "category": "player",
     "name": "木兎 光太郎",
     "rarity": "P",
@@ -2577,6 +2577,366 @@
     "toss": 0,
     "attack": 3,
     "effect": "",
-    "image": "images/HV-PR-021_s.jpg"
+    "image": "images/HV-PR-021.jpg"
   }
+{
+  "id": "HVBP-001-P",
+  "category": "player",
+  "name": "日向 翔陽",
+  "rarity": "P",
+  "type": "MB",
+  "attr": "烏野",
+  "serve": 1,
+  "block": 1,
+  "receive": 1,
+  "toss": 0,
+  "attack": 2,
+  "effect": "登場：アタックエリア＿手札1枚をドロップエリアに置けば使える。このキャラのアタックポイントに+2する。",
+  "image": "images/HVBP-001-P.jpg"
+}
+{
+  "id": "HVBP-002-P",
+  "category": "player",
+  "name": "日向 翔陽",
+  "rarity": "P",
+  "type": "MB",
+  "attr": "烏野",
+  "serve": 1,
+  "block": 1,
+  "receive": 1,
+  "toss": 0,
+  "attack": 2,
+  "effect": "登場：アタックエリア＿手札1枚をドロップエリアに置けば使える。このキャラのアタックポイントに+2する。",
+  "image": "images/HVBP-002-P.jpg"
+}
+{
+  "id": "HVBP-003-P",
+  "category": "player",
+  "name": "影山 飛雄",
+  "rarity": "P",
+  "type": "S",
+  "attr": "烏野",
+  "serve": 3,
+  "block": 1,
+  "receive": 1,
+  "toss": 1,
+  "attack": 2,
+  "effect": "登場：トスエリア＿2ガッツ払えば使える。カード1枚を引く。",
+  "image": "images/HVBP-003-P.jpg"
+}
+{
+  "id": "HVBP-004-P",
+  "category": "player",
+  "name": "影山 飛雄",
+  "rarity": "P",
+  "type": "S",
+  "attr": "烏野",
+  "serve": 3,
+  "block": 1,
+  "receive": 1,
+  "toss": 1,
+  "attack": 2,
+  "effect": "登場：トスエリア＿2ガッツ払えば使える。カード1枚を引く。",
+  "image": "images/HVBP-004-P.jpg"
+}
+{
+  "id": "HVBP-005-P",
+  "category": "player",
+  "name": "月島 蛍",
+  "rarity": "P",
+  "type": "MB",
+  "attr": "烏野",
+  "serve": 1,
+  "block": 3,
+  "receive": 1,
+  "toss": 0,
+  "attack": 2,
+  "effect": "",
+  "image": "images/HVBP-005-P.jpg"
+}
+{
+  "id": "HVBP-006-P",
+  "category": "player",
+  "name": "山口 忠",
+  "rarity": "P",
+  "type": "MB",
+  "attr": "烏野",
+  "serve": 4,
+  "block": 1,
+  "receive": 2,
+  "toss": 0,
+  "attack": 2,
+  "effect": "",
+  "image": "images/HVBP-006-P.jpg"
+}
+{
+  "id": "HVBP-007-P",
+  "category": "player",
+  "name": "西谷 夕",
+  "rarity": "P",
+  "type": "Li",
+  "attr": "烏野",
+  "serve": 0,
+  "block": 0,
+  "receive": 5,
+  "toss": 0,
+  "attack": 0,
+  "effect": "",
+  "image": "images/HVBP-007-P.jpg"
+}
+{
+  "id": "HVBP-008-P",
+  "category": "player",
+  "name": "田中 龍之介",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "烏野",
+  "serve": 2,
+  "block": 2,
+  "receive": 2,
+  "toss": 0,
+  "attack": 3,
+  "effect": "",
+  "image": "images/HVBP-008-P.jpg"
+}
+{
+  "id": "HVBP-009-P",
+  "category": "player",
+  "name": "縁下 力",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "烏野",
+  "serve": 2,
+  "block": 1,
+  "receive": 3,
+  "toss": 0,
+  "attack": 2,
+  "effect": "登場：レシーブエリア/アタックエリア＿2ガッツ払えば使える。このキャラのレシーブポイントかアタックポイントに+1する。",
+  "image": "images/HVBP-009-P.jpg"
+}
+{
+  "id": "HVBP-010-P",
+  "category": "player",
+  "name": "澤村 大地",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "烏野",
+  "serve": 2,
+  "block": 1,
+  "receive": 4,
+  "toss": 0,
+  "attack": 2,
+  "effect": "",
+  "image": "images/HVBP-010-P.jpg"
+}
+{
+  "id": "HVBP-011-P",
+  "category": "player",
+  "name": "菅原 孝支",
+  "rarity": "P",
+  "type": "S",
+  "attr": "烏野",
+  "serve": 2,
+  "block": 1,
+  "receive": 3,
+  "toss": 1,
+  "attack": 2,
+  "effect": "",
+  "image": "images/HVBP-011-P.jpg"
+}
+{
+  "id": "HVBP-012-P",
+  "category": "player",
+  "name": "東峰 旭",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "烏野",
+  "serve": 3,
+  "block": 1,
+  "receive": 3,
+  "toss": 0,
+  "attack": 3,
+  "effect": "",
+  "image": "images/HVBP-012-P.jpg"
+}
+{
+  "id": "HVBP-013-P",
+  "category": "player",
+  "name": "ドンピシャ!!",
+  "rarity": "P",
+  "type": "イベント",
+  "attr": "烏野",
+  "serve": 0,
+  "block": 0,
+  "receive": 0,
+  "toss": 0,
+  "attack": 0,
+  "effect": "アタック＿キャラ1人のアタックポイントに+1する。その後、トスキャラが「影山 飛雄」でアタックキャラが「日向 翔陽」の場合、次の相手のターン中、相手はブロックキャラを2人までしか登場させられない。",
+  "image": "images/HVBP-013-P.jpg"
+}
+{
+  "id": "HVBP-014-P",
+  "category": "player",
+  "name": "期待してる",
+  "rarity": "P",
+  "type": "イベント",
+  "attr": "烏野",
+  "serve": 0,
+  "block": 0,
+  "receive": 0,
+  "toss": 0,
+  "attack": 0,
+  "effect": "レシーブ＿キャラ1人のレシーブポイントに+1する。その後、手札が3枚以下の場合、カード1枚を引く。",
+  "image": "images/HVBP-014-P.jpg"
+}
+{
+  "id": "HV-PR-022-P",
+  "category": "player",
+  "name": "澤村 大地",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "烏野",
+  "serve": 1,
+  "block": 0,
+  "receive": 5,
+  "toss": 0,
+  "attack": 0,
+  "effect": "登場：レシーブエリア＿相手のサーブかアタックのオフェンスポイントが2以下の場合、以下の2つを使える。\n▶[=Aパス(1)]する。\n▶1ガッツ払えば使える。カード1枚を引く。",
+  "image": "images/HV-PR-022-P.jpg"
+}
+{
+  "id": "HV-PR-023-P",
+  "category": "player",
+  "name": "芝山 優生",
+  "rarity": "P",
+  "type": "Li",
+  "attr": "音駒",
+  "serve": 0,
+  "block": 0,
+  "receive": 5,
+  "toss": 0,
+  "attack": 0,
+  "effect": "自分のアタックエリアに「灰羽 リエーフ」が登場した時、このキャラがレシーブキャラの場合、2ガッツ払えば使える。そのキャラのアタックポイントに+1する。",
+  "image": "images/HV-PR-023-P.jpg"
+}
+{
+  "id": "HV-PR-024-P",
+  "category": "player",
+  "name": "及川 徹",
+  "rarity": "P",
+  "type": "S",
+  "attr": "青葉城西",
+  "serve": 1,
+  "block": 1,
+  "receive": 1,
+  "toss": 1,
+  "attack": 2,
+  "effect": "登場：トスエリア＿3ガッツ払えば使える。このキャラのトスポイントに+2し、相手は手札からカードすべてをデッキに戻してシャッフルし、カード4枚を引く。",
+  "image": "images/HV-PR-024-P.jpg"
+}
+{
+  "id": "HV-PR-025-P",
+  "category": "player",
+  "name": "京谷 賢太郎",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "青葉城西",
+  "serve": 2,
+  "block": 2,
+  "receive": 2,
+  "toss": 0,
+  "attack": 2,
+  "effect": "登場：アタックエリア＿自分のトスキャラが「及川 徹」の場合、3ガッツ払えば使える。このキャラのアタックポイントに+2し、相手の手札が3枚以上の場合、相手は手札からカード1枚をドロップする。",
+  "image": "images/HV-PR-025-P.jpg"
+}
+{
+  "id": "HV-PR-026-P",
+  "category": "player",
+  "name": "猿杙 大和",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "梟谷",
+  "serve": 1,
+  "block": 1,
+  "receive": 3,
+  "toss": 0,
+  "attack": 3,
+  "effect": "登場：レシーブエリア＿4ガッツ払えば使える。このキャラのレシーブポイントに+4する",
+  "image": "images/HV-PR-026-P.jpg"
+}
+{
+  "id": "HV-PR-027-P",
+  "category": "player",
+  "name": "二口 堅治",
+  "rarity": "P",
+  "type": "WS",
+  "attr": "伊達工業",
+  "serve": 2,
+  "block": 2,
+  "receive": 0,
+  "toss": 0,
+  "attack": 3,
+  "effect": "登場：サーブエリア/ブロックエリア/アタックエリア＿次の相手のターン中、相手がカードを引く以外の方法でカードを手札に加えるたび、相手のデッキの上からカード3枚をドロップする。",
+  "image": "images/HV-PR-027-P.jpg"
+}
+{
+  "id": "HV-PR-028-P",
+  "category": "player",
+  "name": "白布　賢二郎",
+  "rarity": "P",
+  "type": "S",
+  "attr": "白鳥沢",
+  "serve": 1,
+  "block": 1,
+  "receive": 1,
+  "toss": 1,
+  "attack": 2,
+  "effect": "登場：トスエリア＿2ガッツ払えば使える。相手のイベントエリアからカード1枚までをドロップし、次の相手のターン中、相手のレシーブキャラが登場するたび、そのキャラのレシーブポイントに－2する。",
+  "image": "images/HV-PR-028-P.jpg"
+}
+{
+  "id": "HV-PR-029-P",
+  "category": "player",
+  "name": "鬼と鬼だな",
+  "rarity": "P",
+  "type": "イベント",
+  "attr": "烏野",
+  "serve": 0,
+  "block": 0,
+  "receive": 0,
+  "toss": 0,
+  "attack": 0,
+  "effect": "ドロー＿自分のドロップエリアから「日向 翔陽」1枚までと「影山 飛雄」1枚までを手札に加える。",
+  "image": "images/HV-PR-029-P.jpg"
+}
+{
+  "id": "HV-PR-030-P",
+  "category": "player",
+  "name": "護りの音駒でリベロやるって チョー名誉だろ",
+  "rarity": "P",
+  "type": "イベント",
+  "attr": "音駒",
+  "serve": 0,
+  "block": 0,
+  "receive": 0,
+  "toss": 0,
+  "attack": 0,
+  "effect": "レシーブ＿(ターン1)自分の音駒のレシーブキャラ1人のレシーブポイントに+2する。そのキャラが「芝山 優生」の場合、カード1枚を引く。",
+  "image": "images/HV-PR-030-P.jpg"
+}
+{
+  "id": "HV-PR-031-P",
+  "category": "player",
+  "name": "全員があなたを見ていますよ",
+  "rarity": "P",
+  "type": "イベント",
+  "attr": "梟谷",
+  "serve": 0,
+  "block": 0,
+  "receive": 0,
+  "toss": 0,
+  "attack": 0,
+  "effect": "アタック＿カード1枚を引き、自分の梟谷のキャラ1人のアタックポイントに+1する。自分のトスキャラが「赤葦 京治」でアタックキャラが「木兎 光太郎」の場合、次の相手のターン中、相手のセンターブロッカーが登場するたび、そのキャラのブロックポイントに－2する。。",
+  "image": "images/HV-PR-031-P.jpg"
+}
 ]
