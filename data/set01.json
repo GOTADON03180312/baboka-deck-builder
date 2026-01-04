@@ -2578,8 +2578,8 @@
     "attack": 3,
     "effect": "",
     "image": "images/HV-PR-021-P.jpg"
-  }
-{
+  },
+  {
   "id": "HVBP-001-P",
   "category": "player",
   "name": "日向 翔陽",
@@ -2593,8 +2593,8 @@
   "attack": 2,
   "effect": "登場：アタックエリア＿手札1枚をドロップエリアに置けば使える。このキャラのアタックポイントに+2する。",
   "image": "images/HVBP-001-P.jpg"
-}
-{
+ },
+ {
   "id": "HVBP-002-P",
   "category": "player",
   "name": "日向 翔陽",
@@ -2608,8 +2608,8 @@
   "attack": 2,
   "effect": "登場：アタックエリア＿手札1枚をドロップエリアに置けば使える。このキャラのアタックポイントに+2する。",
   "image": "images/HVBP-002-P.jpg"
-}
-{
+ },
+ {
   "id": "HVBP-003-P",
   "category": "player",
   "name": "影山 飛雄",
@@ -2623,8 +2623,8 @@
   "attack": 2,
   "effect": "登場：トスエリア＿2ガッツ払えば使える。カード1枚を引く。",
   "image": "images/HVBP-003-P.jpg"
-}
-{
+  },
+  {
   "id": "HVBP-004-P",
   "category": "player",
   "name": "影山 飛雄",
@@ -2638,7 +2638,7 @@
   "attack": 2,
   "effect": "登場：トスエリア＿2ガッツ払えば使える。カード1枚を引く。",
   "image": "images/HVBP-004-P.jpg"
-}
+},
 {
   "id": "HVBP-005-P",
   "category": "player",
@@ -2653,7 +2653,7 @@
   "attack": 2,
   "effect": "",
   "image": "images/HVBP-005-P.jpg"
-}
+},
 {
   "id": "HVBP-006-P",
   "category": "player",
@@ -2668,7 +2668,7 @@
   "attack": 2,
   "effect": "",
   "image": "images/HVBP-006-P.jpg"
-}
+},
 {
   "id": "HVBP-007-P",
   "category": "player",
@@ -2683,7 +2683,7 @@
   "attack": 0,
   "effect": "",
   "image": "images/HVBP-007-P.jpg"
-}
+},
 {
   "id": "HVBP-008-P",
   "category": "player",
@@ -2698,7 +2698,7 @@
   "attack": 3,
   "effect": "",
   "image": "images/HVBP-008-P.jpg"
-}
+},
 {
   "id": "HVBP-009-P",
   "category": "player",
@@ -2713,7 +2713,7 @@
   "attack": 2,
   "effect": "登場：レシーブエリア/アタックエリア＿2ガッツ払えば使える。このキャラのレシーブポイントかアタックポイントに+1する。",
   "image": "images/HVBP-009-P.jpg"
-}
+},
 {
   "id": "HVBP-010-P",
   "category": "player",
@@ -2728,7 +2728,7 @@
   "attack": 2,
   "effect": "",
   "image": "images/HVBP-010-P.jpg"
-}
+},
 {
   "id": "HVBP-011-P",
   "category": "player",
@@ -2743,7 +2743,7 @@
   "attack": 2,
   "effect": "",
   "image": "images/HVBP-011-P.jpg"
-}
+},
 {
   "id": "HVBP-012-P",
   "category": "player",
@@ -2758,7 +2758,7 @@
   "attack": 3,
   "effect": "",
   "image": "images/HVBP-012-P.jpg"
-}
+},
 {
   "id": "HVBP-013-P",
   "category": "player",
@@ -2773,7 +2773,7 @@
   "attack": 0,
   "effect": "アタック＿キャラ1人のアタックポイントに+1する。その後、トスキャラが「影山 飛雄」でアタックキャラが「日向 翔陽」の場合、次の相手のターン中、相手はブロックキャラを2人までしか登場させられない。",
   "image": "images/HVBP-013-P.jpg"
-}
+},
 {
   "id": "HVBP-014-P",
   "category": "player",
@@ -2788,7 +2788,7 @@
   "attack": 0,
   "effect": "レシーブ＿キャラ1人のレシーブポイントに+1する。その後、手札が3枚以下の場合、カード1枚を引く。",
   "image": "images/HVBP-014-P.jpg"
-}
+},
 {
   "id": "HV-PR-022-P",
   "category": "player",
@@ -2803,7 +2803,7 @@
   "attack": 0,
   "effect": "登場：レシーブエリア＿相手のサーブかアタックのオフェンスポイントが2以下の場合、以下の2つを使える。\n▶[=Aパス(1)]する。\n▶1ガッツ払えば使える。カード1枚を引く。",
   "image": "images/HV-PR-022-P.jpg"
-}
+},
 {
   "id": "HV-PR-023-P",
   "category": "player",
@@ -2818,7 +2818,7 @@
   "attack": 0,
   "effect": "自分のアタックエリアに「灰羽 リエーフ」が登場した時、このキャラがレシーブキャラの場合、2ガッツ払えば使える。そのキャラのアタックポイントに+1する。",
   "image": "images/HV-PR-023-P.jpg"
-}
+},
 {
   "id": "HV-PR-024-P",
   "category": "player",
@@ -2833,7 +2833,7 @@
   "attack": 2,
   "effect": "登場：トスエリア＿3ガッツ払えば使える。このキャラのトスポイントに+2し、相手は手札からカードすべてをデッキに戻してシャッフルし、カード4枚を引く。",
   "image": "images/HV-PR-024-P.jpg"
-}
+},
 {
   "id": "HV-PR-025-P",
   "category": "player",
@@ -2848,7 +2848,7 @@
   "attack": 2,
   "effect": "登場：アタックエリア＿自分のトスキャラが「及川 徹」の場合、3ガッツ払えば使える。このキャラのアタックポイントに+2し、相手の手札が3枚以上の場合、相手は手札からカード1枚をドロップする。",
   "image": "images/HV-PR-025-P.jpg"
-}
+},
 {
   "id": "HV-PR-026-P",
   "category": "player",
@@ -2863,7 +2863,7 @@
   "attack": 3,
   "effect": "登場：レシーブエリア＿4ガッツ払えば使える。このキャラのレシーブポイントに+4する",
   "image": "images/HV-PR-026-P.jpg"
-}
+},
 {
   "id": "HV-PR-027-P",
   "category": "player",
@@ -2878,7 +2878,7 @@
   "attack": 3,
   "effect": "登場：サーブエリア/ブロックエリア/アタックエリア＿次の相手のターン中、相手がカードを引く以外の方法でカードを手札に加えるたび、相手のデッキの上からカード3枚をドロップする。",
   "image": "images/HV-PR-027-P.jpg"
-}
+},
 {
   "id": "HV-PR-028-P",
   "category": "player",
@@ -2893,7 +2893,7 @@
   "attack": 2,
   "effect": "登場：トスエリア＿2ガッツ払えば使える。相手のイベントエリアからカード1枚までをドロップし、次の相手のターン中、相手のレシーブキャラが登場するたび、そのキャラのレシーブポイントに－2する。",
   "image": "images/HV-PR-028-P.jpg"
-}
+},
 {
   "id": "HV-PR-029-P",
   "category": "player",
@@ -2908,7 +2908,7 @@
   "attack": 0,
   "effect": "ドロー＿自分のドロップエリアから「日向 翔陽」1枚までと「影山 飛雄」1枚までを手札に加える。",
   "image": "images/HV-PR-029-P.jpg"
-}
+},
 {
   "id": "HV-PR-030-P",
   "category": "player",
@@ -2923,7 +2923,7 @@
   "attack": 0,
   "effect": "レシーブ＿(ターン1)自分の音駒のレシーブキャラ1人のレシーブポイントに+2する。そのキャラが「芝山 優生」の場合、カード1枚を引く。",
   "image": "images/HV-PR-030-P.jpg"
-}
+},
 {
   "id": "HV-PR-031-P",
   "category": "player",
