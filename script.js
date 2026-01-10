@@ -405,6 +405,26 @@ function updateSortColors() {
   keySelect.style.backgroundColor = keySelect.value ? "rgba(54, 132, 215, 0.2)" : "";
 }
 
+// =====================================
+// ページタイトル制御
+// =====================================
+const pageTitle = document.getElementById("page-title");
+
+// 新規デッキ用
+function setNewDeckTitle() {
+  pageTitle.textContent = "新規デッキ";
+}
+
+// 既存デッキ用
+function setDeckTitle(name) {
+  pageTitle.textContent = name;
+}
+
+// ホーム画面用（将来使用）
+function setHomeTitle() {
+  pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
+}
+
 
 
 
