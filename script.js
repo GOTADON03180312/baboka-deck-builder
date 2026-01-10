@@ -382,6 +382,7 @@ confirmReset.onclick = () => {
   deck = [];
   saveDeck();
   renderDeck();
+  setNewDeckTitle();
   resetModal.classList.add("hidden");
 };
 
@@ -426,6 +427,7 @@ function setDeckTitle(name) {
 function setHomeTitle() {
   pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
 }
+
 
 
 
