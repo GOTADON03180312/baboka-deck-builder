@@ -321,6 +321,7 @@ document.querySelectorAll("#search, #filter-row input, #sort-key, #sort-order")
 // 初期読み込み
 // =====================================
 loadAllCards();
+setNewDeckTitle();
 
 // =====================================
 // JSONインポート機能
@@ -360,6 +361,7 @@ function handleImportFile(file) {
       deck = json;  // デッキ配列に代入
       saveDeck();   // ローカルストレージにも保存
       renderDeck();
+      setDeckTitle(file.name.replace(".json", ""));
       alert("デッキを読み込みました");
     } catch (err) {
       alert("JSONの読み込みに失敗しました: " + err.message);
@@ -424,6 +426,7 @@ function setDeckTitle(name) {
 function setHomeTitle() {
   pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
 }
+
 
 
 
