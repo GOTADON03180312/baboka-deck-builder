@@ -2,13 +2,14 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>デッキ作成</title>
+  <title>デッキ作成ツール（完全版）</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1 id="page-title">新規デッキ</h1>
+
+  <h1>デッキ作成</h1>
   <div id="deck-count">
     <button id="home-btn" style="margin-right:10px;">ホームに戻る</button>
     <button id="reset-deck-btn" style="margin-right:10px;">リセット</button>
@@ -16,7 +17,7 @@
   </div>
 </header>
 
-<!-- デッキリセット確認モーダル -->
+<!-- デッキリセット確認モーダルを追加 -->
 <div id="reset-modal" class="hidden">
   <div id="reset-modal-content">
     <p>デッキの内容をリセットしますか？</p>
@@ -25,7 +26,7 @@
   </div>
 </div>
 
-<!-- ホーム戻る確認モーダル -->
+  <!-- ホーム戻る確認モーダル -->
 <div id="home-confirm-modal" class="hidden">
   <div id="reset-modal-content">
     <p>保存されていませんがよろしいですか？</p>
@@ -36,14 +37,19 @@
 
 <div id="container">
 
-  <!-- 左側カード一覧 -->
-  <aside id="card-panel">
+<!-- 左側カード一覧 -->
+<aside id="card-panel">
+
+    <!-- 検索 -->
     <div id="filters">
       <input type="text" id="search" placeholder="カード名検索…">
     </div>
 
+    <!-- フィルタ ドロップダウン -->
     <div id="filter-row">
-      <div class="filter-dropdown">
+
+      <!-- レアリティ -->
+      <div id="filter-rarity" class="filter-dropdown">
         <div class="filter-btn">レアリティ</div>
         <div class="filter-content">
           <label><input type="checkbox" value="N">N</label>
@@ -61,6 +67,7 @@
         </div>
       </div>
 
+      <!-- ポジション -->
       <div class="filter-dropdown">
         <div class="filter-btn">ポジション</div>
         <div class="filter-content">
@@ -73,6 +80,7 @@
         </div>
       </div>
 
+      <!-- 所属 -->
       <div class="filter-dropdown">
         <div class="filter-btn">所属</div>
         <div class="filter-content">
@@ -88,9 +96,12 @@
         </div>
       </div>
 
+      <!-- カード枚数表示 -->
       <div id="card-count">表示：0枚</div>
+
     </div>
 
+    <!-- ソート機能 -->
     <div id="sort-area">
       <select id="sort-key">
         <option value="">ソートしない</option>
@@ -107,35 +118,41 @@
       </select>
     </div>
 
+    <!-- グリッド -->
     <div id="card-grid"></div>
+
   </aside>
 
-  <!-- 右側デッキ -->
-  <main id="deck-panel">
-    <h2>デッキ</h2>
-    <div id="deck"></div>
-    <button id="export">デッキをダウンロード</button>
+ <!-- 右側デッキ -->
+<main id="deck-panel">
+  <h2>デッキ</h2>
+  <div id="deck"></div>
+  <button id="export">デッキをダウンロード</button>
 
-    <div id="import-drop-zone">
-      ここにファイルをドロップ<br>またはクリックして選択
-    </div>
-    <input type="file" id="import-file-input" accept=".json" style="display:none;">
-  </main>
+  <!-- JSONインポート用ドロップゾーン -->
+  <div id="import-drop-zone" style="padding:15px; border:2px dashed #888; text-align:center; margin-top:10px; cursor:pointer; user-select:none;">
+    ここにファイルをドロップ<br>またはクリックして選択
+  </div>
+  <input type="file" id="import-file-input" accept=".json" style="display:none;">
+</main>
 
 </div>
 
-<!-- プレビュー -->
+<!-- カードプレビュー（枚数指定対応） -->
 <div id="modal" class="hidden">
   <div id="modal-content">
     <span id="close">&times;</span>
     <img id="modal-image">
     <h3 id="modal-name"></h3>
 
+    <!-- 情報表示は非表示にしてスペース確保 -->
+    <div id="modal-info" style="display:none;"></div>
+
     <div id="modal-qty">
-      <button id="decrease">-</button>
-      <input type="number" id="card-quantity" min="0" max="40" value="1">
-      <button id="increase">+</button>
-      <button id="add-to-deck">確定</button>
+      <button id="decrease" style="font-size: 2em;">-</button>
+      <input type="number" id="card-quantity" min="0" max="40" value="1" style="width: 60px; font-size: 1.5em; text-align: center;">
+      <button id="increase" style="font-size: 2em;">+</button>
+      <button id="add-to-deck" style="font-size: 1.2em;">確定</button>
     </div>
   </div>
 </div>
