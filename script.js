@@ -429,11 +429,28 @@ function setHomeTitle() {
   pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
 }
 
-const homeBtn = document.getElementById("home-btn");
 homeBtn.onclick = () => {
-  location.href = "home.html";
+  homeModal.classList.remove("hidden");
 };
 
+
+
+// =====================================
+// ページタイトル制御
+// =====================================
+const pageTitle = document.getElementById("page-title");
+
+function setNewDeckTitle() {
+  pageTitle.textContent = "新規デッキ";
+}
+
+function setDeckTitle(name) {
+  pageTitle.textContent = name;
+}
+
+function setHomeTitle() {
+  pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
+}
 
 
 
