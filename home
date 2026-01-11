@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>バボカ!!BREAKデッキメーカー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>バボカ!!BREAKデッキメーカー</h1>
+</header>
+
+<!-- ホーム画面 -->
+<div id="home-screen">
+
+  <!-- 左半分 -->
+  <div id="home-left">
+    <button class="home-btn" onclick="location.href='index.html'">
+      新しくデッキを作成
+    </button>
+
+    <button class="home-btn">
+      デッキを編集
+    </button>
+  </div>
+
+  <!-- 右半分 -->
+  <div id="home-right">
+    <div class="deck-list-placeholder">
+      既存デッキ一覧<br>
+      （ここに作成済みデッキが並びます）
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
