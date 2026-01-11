@@ -403,6 +403,7 @@ function updateFilterButtonColors() {
   });
 }
 
+
 function updateSortColors() {
   const keySelect = document.getElementById("sort-key");
   keySelect.style.backgroundColor = keySelect.value ? "rgba(54, 132, 215, 0.2)" : "";
@@ -428,43 +429,8 @@ function setHomeTitle() {
   pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
 }
 
-home-btn.onclick = () => {
-  location.href = "home.html";
-};
-
-// =====================================
-// ページタイトル制御
-// =====================================
-const pageTitle = document.getElementById("page-title");
-
-function setNewDeckTitle() {
-  pageTitle.textContent = "新規デッキ";
-}
-
-function setDeckTitle(name) {
-  pageTitle.textContent = name;
-}
-
-// 初期状態
-setNewDeckTitle();
-
-// =====================================
-// ホーム戻る確認モーダル
-// =====================================
 const homeBtn = document.getElementById("home-btn");
-const homeModal = document.getElementById("home-confirm-modal");
-const cancelHome = document.getElementById("cancel-home");
-const confirmHome = document.getElementById("confirm-home");
-
 homeBtn.onclick = () => {
-  homeModal.classList.remove("hidden");
-};
-
-cancelHome.onclick = () => {
-  homeModal.classList.add("hidden");
-};
-
-confirmHome.onclick = () => {
   location.href = "home.html";
 };
 
