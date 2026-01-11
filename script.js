@@ -3,7 +3,7 @@ let deck = [];
 let currentCard = null;
 
 // =====================================
-// cardsフォルダ内の全JSONを自動読み込み 
+// cardsフォルダ内の全JSONを自動読み込み
 // =====================================
 async function loadAllCards() {
   try {
@@ -451,6 +451,7 @@ function setDeckTitle(name) {
 function setHomeTitle() {
   pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
 }
+
 
 
 
