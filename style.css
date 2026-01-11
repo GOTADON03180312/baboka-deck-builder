@@ -422,3 +422,31 @@ header h1 {
     max-width: 360px
   }
 }
+
+/* =================================
+   ホーム：デッキ一覧
+================================= */
+
+.deck-list {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.deck-item-home {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.deck-item-home:hover {
+  background: rgba(54,132,215,0.1);
+}
+
+.deck-item-home.selected {
+  background: rgba(54,132,215,0.2);
+  border-color: var(--accent);
+}
