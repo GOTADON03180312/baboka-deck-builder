@@ -11,29 +11,77 @@
   <h1>バボカ!!BREAKデッキメーカー</h1>
 </header>
 
-<!-- ホーム画面 -->
 <div id="home-screen">
 
-  <!-- 左半分 -->
+  <!-- 左側 -->
   <div id="home-left">
-    <button class="home-btn" onclick="location.href='index.html'">
+    <button id="new-deck-btn" class="home-btn">
       新しくデッキを作成
     </button>
 
-    <button class="home-btn">
+    <button id="edit-deck-btn" class="home-btn disabled">
       デッキを編集
     </button>
   </div>
 
-  <!-- 右半分 -->
+  <!-- 右側 -->
   <div id="home-right">
-    <div class="deck-list-placeholder">
-      既存デッキ一覧<br>
-      （ここに作成済みデッキが並びます）
+    <div id="deck-list" class="deck-list">
+      <!-- JSで生成 -->
     </div>
   </div>
 
 </div>
+
+<script>
+/* =====================================
+   デッキ一覧（仮：localStorage mydeck）
+===================================== */
+
+const deckListEl = document.getElementById("deck-list");
+const editBtn = document.getElementById("edit-deck-btn");
+
+let selected = false;
+
+// 仮デッキ（存在確認）
+const savedDeck = localStorage.getItem("mydeck");
+
+if (savedDeck) {
+  const item = document.createElement("div");
+  item.className = "deck-item-home";
+  item.textContent = "保存中のデッキ";
+
+  item.onclick = () => {
+    document.querySelectorAll(".deck-item-home")
+      .forEach(el => el.classList.remove("selected"));
+
+    item.classList.add("selected");
+    selected = true;
+
+    editBtn.classList.remove("disabled");
+  };
+
+  deckListEl.appendChild(item);
+} else {
+  deckListEl.innerHTML = "保存されているデッキはありません";
+}
+
+/* =====================================
+   ボタン処理
+===================================== */
+
+// 新規デッキ（完全リセット）
+document.getElementById("new-deck-btn").onclick = () => {
+  localStorage.removeItem("mydeck");
+  location.href = "index.html";
+};
+
+// 編集（選択時のみ）
+editBtn.onclick = () => {
+  if (!selected) return;
+  location.href = "index.html";
+};
+</script>
 
 </body>
 </html>
