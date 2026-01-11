@@ -428,6 +428,10 @@ function setHomeTitle() {
   pageTitle.textContent = "バボカ!!BREAKデッキメーカー";
 }
 
+homeBtn.onclick = () => {
+  location.href = "home.html";
+};
+
 
 
 
